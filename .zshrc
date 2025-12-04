@@ -1,11 +1,14 @@
 #!/bin/bash
 # Oliwier Kulczycki
+export CLICOLOR=1
+
 
 fastfetch
 alias vi=nvim
 alias vim=nvim
-alias ll='ls -l'
-alias lla='ls -la'
+alias ls='ls -G'
+alias ll='ls -lG'
+alias lla='ls -laG'
 
 
 
