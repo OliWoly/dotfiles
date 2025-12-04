@@ -1,13 +1,28 @@
 #!/bin/bash
+# Oliwier Kulczycki
 
-# Only if it were the same for both systems
-#ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
-ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-ln -sf ~/dotfiles/git/ignore/.gitignore ~/.config/git/ignore/.gitignore
-
+# Get OS
 OS="$(uname -s)"
 
+# KITTY (Terminal)
+mkdir -pv ~/.config/kitty
+#ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+
+# Fastfetch
+mkdir -pv ~/.config/fastfetch
+ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
+
+# NVIM
+mkdir -pv ~/.config/nvim
+ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+
+# GIT
+mkdir -pv ~/.config/git/ignore
+cp -f ~/dotfiles/git/ignore/.gitignore ~/.config/git/ignore/.gitignore
+git config --global core.excludesfile "~/.config/git/ignore/.gitignore"
+
+
+# ----- OS SPECIFIC TWEAKS ----- #
 # Only on MacOS
 if [ "$OS" == "Darwin" ]; then
 	ln -sf ~/dotfiles/.bashrc ~/.zshrc
