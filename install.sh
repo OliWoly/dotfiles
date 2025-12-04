@@ -4,6 +4,7 @@
 #ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/git/ignore/.gitignore ~/.config/git/ignore/.gitignore
 
 OS="$(uname -s)"
 
