@@ -14,6 +14,9 @@ alias vim=nvim
 alias ls='ls -G'
 alias ll='ls -lG'
 alias lla='ls -laG'
+
+# Custom Command Aliases as scripts
+source $HOME/dotfiles/customcommandalias.sh
 alias httpserver='python3 -m http.server 25570'
 
 # Clear any colour just in case.
