@@ -21,6 +21,9 @@ mkdir -pv ~/.config/git/ignore
 cp -f ~/dotfiles/git/ignore/.gitignore ~/.config/git/ignore/.gitignore
 git config --global core.excludesfile "~/.config/git/ignore/.gitignore"
 
+# AUDIOMIX (works on both Linux and MacOS - path is identical)
+ln -sf ~/Documents/code/audiomix/audiomix.sh ~/scripts/audiomix.sh
+
 
 # ----- OS SPECIFIC TWEAKS ----- #
 # Only on MacOS
