@@ -22,3 +22,8 @@ alias httpserver='python3 -m http.server 25570'
 # Clear any colour just in case.
 echo -e "${Color_Off}"
 clear
+
+source '/home/oli/.bash_completions/comfy.sh'
+
+
+export PATH="/home/oli/.local/bin:$PATH"
