@@ -12,9 +12,14 @@ mkdir -pv ~/.config/kitty
 mkdir -pv ~/.config/fastfetch
 ln -sf ~/dotfiles/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc
 
-# NVIM
-mkdir -pv ~/.config/nvim
-ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+# NVIM (whole folder is linked, so plugin lockfile + any extra files stay in dotfiles)
+if [ -d ~/.config/nvim ] && [ ! -L ~/.config/nvim ]; then
+	mv -v ~/.config/nvim ~/.config/nvim.bak.$(date +%s)
+fi
+ln -sfn ~/dotfiles/nvim ~/.config/nvim
+if ! command -v tree-sitter >/dev/null 2>&1; then
+	echo "NOTE: install tree-sitter-cli for nvim syntax highlighting (see README)"
+fi
 
 # GIT
 mkdir -pv ~/.config/git/ignore
